@@ -1,5 +1,5 @@
 import React from 'react';
-const Product = ({product} ) =>{
+const Product = ({product}  ) =>{
     return(
         <div>
             <div class="card" >
