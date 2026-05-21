@@ -2,6 +2,7 @@ import React from "react";
 import Data from '../Data.json';
 import { useState } from "react";
 import Product from "../Components/Product";
+
 const Products = ()=> {
 const [products,setProducts] = useState(Data.products)
     return (

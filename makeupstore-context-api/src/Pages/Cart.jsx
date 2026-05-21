@@ -1,10 +1,28 @@
-import React from "react";
+import {React, useContext, useState} from "react";
+import { CartContext } from "../Features/ContextProvider";
+import {CartProduct} from "../Components/CartProduct.jsx";
+import { totalItem, totalPrice } from "../Features/CartReducer.jsx";
 const Cart = () =>{
+    const {cart, balance} = useContext(CartContext);
     return(
-        <div className="container justify-content-center align-items-center mt-5 ">
-        <div className="row row-cols-1 row-cols-md-3 g-4 p-4 mt-3">
-            <h1>Cart</h1>
+       <div className='container mt-5'> 
+       <div className="row">
+        <div className="col-8">
+            {cart.map(p =>(
+                <CartProduct key={p.id} product={p}/>
+            ))}
         </div>
+       </div>
+       <div className="col-4">
+        <div className="bg-secondary p-3 text-white">
+            <h5>Antal produkter i kurv: {totalItem(cart)}</h5>
+            <h5> Samlet Pris: $ {totalPrice(cart)} </h5>
+            <button className="btn btn-warning">Checkout</button>
         </div>
+       </div>
+
+
+       </div>
     )
 }
+export default Cart

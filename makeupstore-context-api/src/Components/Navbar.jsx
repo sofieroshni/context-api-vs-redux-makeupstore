@@ -1,14 +1,19 @@
 import React  from "react";
 import { BsCart } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import {useContext} from "react";
+import {CartContext} from "../Features/ContextProvider.jsx";
+
 const Navbar = () => {
-    return(
+    const { cart = [] } = useContext(CartContext);
+
+    return (
         <div className="d-flex justify-content-between bg-secondary p-3 text-white">
-            <a href="" className="navbar-brand fs-4 fw-bolder">Shop</a>
-            <a href="" className="text-white fs-2 text-decoration-none"> <BsCart/> 0 </a>
-        
-
-
+            <Link to='/' className="navbar-brand fs-4 fw-bolder">Shop</Link>
+            <Link to='/cart' className="text-white fs-2 text-decoration-none">
+                <BsCart /> {cart.length}
+            </Link>
         </div>
-    )
+    );
 }
 export default Navbar

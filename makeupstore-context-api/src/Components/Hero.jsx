@@ -2,9 +2,9 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="bg-secondary text-white p-5 text-center">
-    <h1>Welcome to our Makeup Store</h1>
-    <p>Discover the latest trends in beauty and skincare products.</p>
+    <div className="bg-black text-white p-5 text-center">
+    <h1>Makeupstore</h1>
+    <p>Opdage nyeste trends indenfor makeup og skincare.</p>
   </div>
   )
 }
