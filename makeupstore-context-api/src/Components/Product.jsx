@@ -17,7 +17,7 @@ const Product = ({product}  ) =>{
     <h5 className="card-title text-dark">{product.price}</h5>
     <p className="card-text">{product.description}</p>
         <button
-            class="btn btn-primary"
+            className="btn btn-primary"
             onClick={() => dispatch({ type: "Add", product: product })}
           >
             Add To Cart
