@@ -14,6 +14,8 @@ const Product = ({product}  ) =>{
     objectFit: "cover"
   }}
 />  <div className="card-body">
+      <p className='text-secondary'>{product.category}</p>
+
     <h5 className="card-title text-dark">{product.price}</h5>
     <p className="card-text">{product.description}</p>
         <button
@@ -22,6 +24,8 @@ const Product = ({product}  ) =>{
           >
             Add To Cart
           </button>
+  </div>
+  <div>
   </div>
 </div>
 

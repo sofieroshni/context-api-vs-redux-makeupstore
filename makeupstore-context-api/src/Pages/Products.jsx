@@ -2,6 +2,7 @@ import React from "react";
 import Data from '../Data.json';
 import { useState } from "react";
 import Product from "../Components/Product";
+import { totalItem, totalPrice } from "../Features/CartReducer.jsx";
 
 const Products = ()=> {
 const [products,setProducts] = useState(Data.products)
@@ -14,6 +15,9 @@ const [products,setProducts] = useState(Data.products)
                 ))
             }
         </div>
+        <h1>
+            
+        </h1>
         </div>
     )
     

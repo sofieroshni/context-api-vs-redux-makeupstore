@@ -6,9 +6,11 @@ import { initialState } from './CartReducer'
 export const CartContext = createContext()
 
 const ContextProvider = ({children}) => {
-    const [state, dispatch] = useReducer(CartReducer, initialState)
+    const [state, userMoney, dispatch] = useReducer(CartReducer, initialState)
   return (
-    <CartContext.Provider value={{cart: state, dispatch}}>
+    <CartContext.Provider value={{state,
+        dispatch,
+        userMoney: 5000, dispatch}}>
         {children}
     </CartContext.Provider>
          )
