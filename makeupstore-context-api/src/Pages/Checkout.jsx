@@ -7,7 +7,7 @@ const Checkout = () => {
     const { boughtItems, dispatch } = useContext(CartContext);
     return (
         
-        <div className="container mt-5">
+        <div className="container mt-5 mb-5">
         
             <h1>Tak for dit køb!</h1>
              <h2>Du har købt følgende produkter:</h2>

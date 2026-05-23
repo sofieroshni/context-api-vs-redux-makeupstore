@@ -8,25 +8,25 @@ import { BsCart } from "react-icons/bs";
 const Footer = () => {
     const { boughtItems, cart, userMoney } = useContext(CartContext);
     return(
-        <footer className="bg-transparent text-white  fixed-bottom" >
+        <footer className=" text-white " style={{}} >
             <div className=" d-flex justify-content-end align-items-center p-0 m-0">
         
-<div className="card text-bg-info mb-3 m-0 fixed-right "  style={{ maxWidth: "18rem", height: "300px", }} >
-  <div className="card-header">Købte produkter</div>
+<div className="card text-bg-secondary mb-3 m-1  position-fixed bottom-0 end-0"  style={{ maxWidth: "18rem", backgroundColor:"pink", zIndex:"1000", right:"0px"}} >
   <div className="card-body">
-    <h5 className="card-title">Status Købt</h5>
-              < BsBagCheckFill /> 
-               <p className="card-text">Antal produkter i købt: {totalItem(boughtItems)}</p>
+             <h5>< BsBagCheckFill />Købt: {totalItem(boughtItems)}  </h5> <p></p>
+               <p className="card-text">Antal produkter i købt: </p>
                <p className="card-text">Samlet Pris: $ {totalPrice(boughtItems
                     
-                ).toFixed(2)} </p>
+                ).toFixed(2)}/</p>
                
-                   <h5 className="card-title">Status Shopping</h5>
+                   <p className="card-title">Status Shopping</p>
                 <p>
                     Penge på konto: ${userMoney.toFixed(2)}
                 </p>
-                <BsCart /> {totalItem(cart) || 0}
-                <p></p>
+                <h5>
+                    <BsCart/> {totalItem(cart) || 0}
+                </h5>
+                <p> Antal produkter i Kurv</p>
                 
                 
   </div>

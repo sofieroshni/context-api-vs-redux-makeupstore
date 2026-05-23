@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Product = ({product}  ) =>{
     const {cart, dispatch} = useContext(CartContext);
     return(
-        <div >
+        <div style={{ zIndex:"1000"}} >
             <div className ="card justify-content-center text-align-center" >
 <img
   src={product.thumbnail}
