@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="d-flex justify-content-between bg-secondary p-3 text-white">
             <Link to='/' className="navbar-brand fs-4 fw-bolder">Shop</Link>
             <div className="d-flex gap-4 align-items-center">
-                <span>Penge på konto: ${userMoney.toFixed(2)}</span>
+                <span>Penge på konto: {userMoney} kr</span>
                 <Link to='/cart' className="text-white fs-2 text-decoration-none">
 <BsCart /> {totalItem(cart) || 0}
                 </Link>

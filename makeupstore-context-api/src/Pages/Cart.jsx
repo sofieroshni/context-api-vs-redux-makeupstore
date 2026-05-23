@@ -26,7 +26,7 @@ const Cart = () =>{
        <div className="col-4">
         <div className="bg-secondary p-3 text-white">
             <h5>Antal produkter i kurv: {totalItem(cart)}</h5>
-            <h5>Samlet Pris: $ {totalPrice(cart).toFixed(2)} </h5>
+            <h5>Samlet Pris: ${totalPrice(cart)} Kr </h5>
 <button
     className="btn btn-warning"
     onClick={() => {

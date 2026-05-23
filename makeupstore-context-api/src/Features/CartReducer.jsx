@@ -2,7 +2,7 @@ import Checkout from "../Pages/Checkout"
 
 // chat-gpt
 export const initialState = {
-    userMoney: 5000,
+    userMoney: 500,
     cart: [],
     // boughtItems: [],
     boughtItems: [
@@ -58,12 +58,17 @@ const CartReducer = (state, action) => {
                     : p
             )}
 
-        case "Decrease":
-            return {...state, cart: state.cart.map(p => 
-                p.id === action.id 
+       case "Decrease":
+    return {
+        ...state,
+        cart: state.cart
+            .map(p =>
+                p.id === action.id
                     ? { ...p, quantity: p.quantity - 1 }
                     : p
-            )}
+            )
+            .filter(p => p.quantity > 0)
+    };
 
            case "Checkout":
     return {
