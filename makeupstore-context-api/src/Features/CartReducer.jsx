@@ -4,21 +4,21 @@ import Checkout from "../Pages/Checkout"
 export const initialState = {
     userMoney: 500,
     cart: [],
-    // boughtItems: [],
-    boughtItems: [
-        {
-            id: 1,
-            title: "Essence Mascara Lash Princess",
-            price: 29.99,
-            quantity: 2
-        },
-        {
-            id: 2,
-            title: "Eyeshadow Palette with Mirror",
-            price: 19.99,
-            quantity: 1
-        }
-    ],
+    boughtItems: [],
+    // boughtItems: [
+    //     {
+    //         id: 1,
+    //         title: "Essence Mascara Lash Princess",
+    //         price: 29.99,
+    //         quantity: 2
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Eyeshadow Palette with Mirror",
+    //         price: 19.99,
+    //         quantity: 1
+    //     }
+
     setCheckedOut: false,
 }
 // //chat gpt-end
