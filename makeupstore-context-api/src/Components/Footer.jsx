@@ -5,6 +5,8 @@ import { totalItem, totalPrice } from '../Features/CartReducer';
 import { BsBagCheckFill, BsCalculatorFill } from "react-icons/bs";
 import { BsCart } from "react-icons/bs";
 import { BsCalculator } from "react-icons/bs";
+import { BsShop } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 const Footer = () => {
     const { boughtItems, cart, userMoney } = useContext(CartContext);
     return(
@@ -39,6 +41,8 @@ const Footer = () => {
   
   </div>  
   </div>
+  <Link to="/"><button className="btn btn-dark m-2 fixed-bottom z-1000 " style={{width:"100px"}}>SHOP <BsShop/></button></Link>
+
   </footer>              
               );}
 export default Footer;

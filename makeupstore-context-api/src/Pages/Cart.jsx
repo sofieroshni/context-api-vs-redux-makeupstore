@@ -21,7 +21,7 @@ const Cart = () =>{
                 ))
             ) : (<>
                 <p>Din kurv er tom</p>
-                <Link to="/"><button className="btn btn-primary">Gå til shoppen</button></Link></>
+                <Link to="/"><button className="btn btn-primary mb-1">Gå til shoppen</button></Link></>
             )}
         </div>
        </div>
