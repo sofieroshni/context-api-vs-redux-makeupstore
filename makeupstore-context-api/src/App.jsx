@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Cart from "./Pages/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContext } from "./Features/ContextProvider";
+import Checkout from "./Pages/Checkout";
 function App() {
 
   return (
@@ -16,12 +17,13 @@ function App() {
 
       <Routes>
         <Route path="/" element= {<Products></Products>}></Route>
-        <Route path="/cart" element= {<Cart value={CartContext}></Cart>}></Route>
+        <Route path="/cart" element= {<Cart value={CartContext}></Cart>}>Kurv</Route>
+        <Route path="/checkout" element= {<Checkout value={CartContext} />}>Checkout</Route>
 
       </Routes>
    <Footer/>
    </BrowserRouter>
-   </>
+</>
   )
 }
 

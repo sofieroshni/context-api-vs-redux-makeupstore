@@ -1,8 +1,12 @@
+import Checkout from "../Pages/Checkout"
+
 // chat-gpt
-export const initialState = {  userMoney: 5000,
-    cart: []}
-  
-;
+export const initialState = {
+    userMoney: 5000,
+    cart: [],
+    boughtItems: [],
+    setCheckedOut: false,
+}
 //chat gpt-end
 
 export const totalItem = (cart) => {
@@ -16,25 +20,44 @@ export const totalPrice = (cart) => {
 
 const CartReducer = (state, action) => {
     switch(action.type) {
-        case "Add":
-            return [...state, { ...action.product, quantity: 1 }]
-
+        case "Add": {
+            const existingProduct = state.cart.find(p => p.id === action.product.id)
+            
+            if (existingProduct) {
+                return {...state, cart: state.cart.map(p =>
+                    p.id === action.product.id
+                        ? { ...p, quantity: p.quantity + 1 }
+                        : p
+                )}
+            } else {
+                return {...state, cart: [...state.cart, { ...action.product, quantity: 1 }]}
+            }
+        }
+        
         case "Remove":
-            return state.filter( p => p.id !== action.id)
+            return {...state, cart: state.cart.filter( p => p.id !== action.id)}
 
         case "Increase":
-            return state.map(p => 
+            return {...state, cart: state.cart.map(p => 
                 p.id === action.id 
                     ? { ...p, quantity: p.quantity + 1 }
                     : p
-            )
+            )}
 
         case "Decrease":
-            return state.map(p => 
+            return {...state, cart: state.cart.map(p => 
                 p.id === action.id 
                     ? { ...p, quantity: p.quantity - 1 }
                     : p
-            )
+            )}
+
+           case "Checkout":
+    return {
+        ...state,
+        boughtItems: [...state.cart],
+        cart: [],
+        userMoney: state.userMoney - totalPrice(state.cart)
+    };
 
         default: 
             return state;
@@ -42,3 +65,4 @@ const CartReducer = (state, action) => {
 }
 
 export default CartReducer
+
