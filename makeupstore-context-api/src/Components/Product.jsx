@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Product = ({product}  ) =>{
     const {cart, dispatch} = useContext(CartContext);
     return(
-        <div>
-            <div className ="card h-100 w-75 justify-content-center text-align-center" >
+        <div >
+            <div className ="card justify-content-center text-align-center" >
 <img
   src={product.thumbnail}
   alt={product.title}

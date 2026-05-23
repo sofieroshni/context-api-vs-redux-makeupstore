@@ -21,7 +21,7 @@ function App() {
         <Route path="/checkout" element= {<Checkout value={CartContext} />}>Checkout</Route>
 
       </Routes>
-   <Footer/>
+   <Footer value={CartContext}/>
    </BrowserRouter>
 </>
   )

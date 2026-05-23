@@ -9,6 +9,7 @@ const Navbar = () => {
     const { cart, userMoney } = useContext(CartContext);
 
     return (
+      <  header className="fixed-top">
         <div className="d-flex justify-content-between bg-secondary p-3 text-white">
             <Link to='/' className="navbar-brand fs-4 fw-bolder">Shop</Link>
             <div className="d-flex gap-4 align-items-center">
@@ -18,6 +19,7 @@ const Navbar = () => {
                 </Link>
             </div>
         </div>
+        </header>
     );
 }
 export default Navbar
