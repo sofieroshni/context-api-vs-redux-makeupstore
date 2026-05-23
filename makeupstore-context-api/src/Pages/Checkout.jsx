@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../Features/ContextProvider.jsx";
 import { totalItem, totalPrice } from "../Features/CartReducer.jsx";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
 
@@ -9,6 +10,7 @@ const Checkout = () => {
          (boughtItems.length === 0) )?(
             <div className="container mt-5 mb-5 w-75">
                 <h1>Du har ikke købt noget endnu!</h1>
+                <Link to="/"><button className="btn bg-primary text-white">Gå til shoppen</button></Link>
             </div>
         ):(
         <div className="container mt-5 mb-5 w-75">

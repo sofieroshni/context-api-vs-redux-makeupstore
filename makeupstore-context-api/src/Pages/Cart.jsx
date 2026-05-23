@@ -5,6 +5,7 @@ import { totalItem, totalPrice } from "../Features/CartReducer.jsx";
 import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
 
+
 const Cart = () =>{
     const navigate = useNavigate();
     const {cart, dispatch} = useContext(CartContext);
@@ -18,8 +19,9 @@ const Cart = () =>{
                 cart.map(p =>(
                     <CartProduct key={p.id} product={p}/>
                 ))
-            ) : (
+            ) : (<>
                 <p>Din kurv er tom</p>
+                <Link to="/"><button className="btn btn-primary">Gå til shoppen</button></Link></>
             )}
         </div>
        </div>
@@ -28,7 +30,7 @@ const Cart = () =>{
             <h5>Antal produkter i kurv: {totalItem(cart)}</h5>
             <h5>Samlet Pris: ${totalPrice(cart)} Kr </h5>
 <button
-    className="btn btn-warning"
+    className="btn btn-primary"
     onClick={() => {
         dispatch({ type: "Checkout" });
         navigate("/checkout");

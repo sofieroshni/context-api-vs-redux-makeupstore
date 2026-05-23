@@ -22,7 +22,7 @@ const Product = ({product}  ) =>{
             className="btn btn-primary"
             onClick={() => dispatch({ type: "Add", product: product })}
           >
-            Add To Cart
+            Tilføj
           </button>
   </div>
   <div>
