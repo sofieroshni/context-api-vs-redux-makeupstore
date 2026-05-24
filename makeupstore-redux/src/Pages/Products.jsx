@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
+import App from '../src/App';
 
- export const Products () =>{
+ export const Products = () =>{
     return(
         <h1>redux version</h1>
     )

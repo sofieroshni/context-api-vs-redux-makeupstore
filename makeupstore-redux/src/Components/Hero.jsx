@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css';
 
- export const Checkout () =>{
+ export const Hero () =>{
     return(
-        <div className='bg-primary text-white'> Hero</div>
+        <div className='bg-primary text-white'> Hero-komponent</div>
     )
 }
 export default Hero
