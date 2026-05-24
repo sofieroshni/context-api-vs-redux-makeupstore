@@ -4,7 +4,7 @@ import App from '../App';
 
  export const CartProduct = () =>{
     return(
-        <div className='bg-primary text-white'><h1>CartProduct 
+        <div className='bg-primary text-white'><h1>Fopter 
             komponent, som ska lind på Cart.jsx siden:D
         </h1> </div>
     )
