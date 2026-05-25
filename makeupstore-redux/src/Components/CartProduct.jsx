@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {Increase } from "../Features/CartSlice";
+import {Increase, removeProduct, } from "../Features/CartSlice";
 const CartProduct = ({ cartItem }) => {
     const dispatch = useDispatch();
      
@@ -13,9 +13,12 @@ const CartProduct = ({ cartItem }) => {
                 <p className="card-text text-dark">$ {cartItem.price}</p>
                 <div className='buttons justify-content-center align-items-center gap-2'>
                     <button className='rounded'>{cartItem.quantity}</button>
-                                <button className='rounded-cicle px-2 bg-light border-1 rounded m-1' onClick={() => dispatch({type: "Decrease", id: cartItem.id})}>-</button>
-<button onClick = {() => dispatch(Increase(cartItem))}>+</button>      
-                 </div>
+                    <button className='rounded' onClick={() => dispatch(Increase(cartItem.id))}>+</button>
+                    <button className='rounded' onClick={() => dispatch(removeProduct(cartItem.id))}>Remove</button>
+
+ 
+            
+            </div>
 
             </div>
         </div>
