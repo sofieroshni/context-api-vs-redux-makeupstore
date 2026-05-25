@@ -16,7 +16,7 @@ const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
           {/* <span>Penge på konto: {userMoney.toFixed(2)} kr</span> */}
           <Link to='/cart' className="text-white fs-2 text-decoration-none">
             <BsCart /> 
-           <p>{totalItems}</p>
+           <p>{cartItems.length}</p>
           </Link>
         </div>
       </div>
