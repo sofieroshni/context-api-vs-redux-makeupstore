@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   // Redux version af hooks
-
+const cartItems = useSelector((state) => state.cart.cartItems);
+const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
   return (
     <header className="fixed-top">
       <div className="d-flex justify-content-between bg-secondary p-3 text-white">
@@ -15,6 +16,7 @@ const Navbar = () => {
           {/* <span>Penge på konto: {userMoney.toFixed(2)} kr</span> */}
           <Link to='/cart' className="text-white fs-2 text-decoration-none">
             <BsCart /> 
+           <p>{totalItems}</p>
           </Link>
         </div>
       </div>

@@ -1,14 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from '../App';
-// import './index.css';
-import {store} from '../app/store.jsx';
-import product from '../Data.json';
- export const Product = () =>{
-    return(
-        <div className='bg-primary text-white'> 
-        <p>{product.title}</p>
+import React from "react";
+import { Add } from "../Features/cartSlice";
+import { useDispatch } from "react-redux";
+export const Product = ({ product }) => {
+const dispatch = useDispatch();
+
+  return (
+     <div style={{ zIndex:"1000"}} >
+            <div className ="card justify-content-center text-align-center" >
+<img
+  src={product.thumbnail}
+  alt={product.title}
+  style={{
+    width: "100%",
+    objectFit: "cover"
+  }}
+/>  <div className="card-body">
+      <p className='text-secondary'>{product.category}</p>
+
+    <h5 className="card-title text-dark">{product.price}</h5>
+    <p className="card-text">{product.description}</p>
+         <button
+            className="btn btn-primary"
+            onClick={() => dispatch(Add(product))}
+          >
+            Tilføj
+          </button>
+  </div>
+  <div>
+  </div>
+</div>
+
         </div>
-    )
-}
-export default Product
+  );
+};
+
+export default Product;
