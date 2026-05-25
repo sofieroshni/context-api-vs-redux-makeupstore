@@ -20,6 +20,7 @@ const cartItems = useSelector((state) => state.cart.cartItems);
       {totalItems}
       {userMoney}
           </Link>
+        {/* <Link to ="/checkout">Chekcout</Link> */}
         </div>
       </div>
     </header>
