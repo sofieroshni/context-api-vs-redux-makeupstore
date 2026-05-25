@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Hero />
-        <Products />
+        {/* <Products /> */}
         <Routes>
           <Route path="/" element={<Products></Products>}></Route>
           <Route path="/cart" element={<Cart></Cart>}></Route>

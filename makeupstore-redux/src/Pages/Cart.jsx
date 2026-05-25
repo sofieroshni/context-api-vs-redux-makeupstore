@@ -1,11 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from '../App.jsx';
-// import './index.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import CartProduct from "../Components/CartProduct.jsx";
 
- export const Cart = () =>{
-    return(
-        <h1>CART version</h1>
-    )
-}
-export default Cart
+const Cart = () => {
+
+  const cartItems = useSelector(
+    (state) => state.cart.cartItems || []
+  );
+
+  return (
+    <div>
+      {cartItems.length === 0 ? (
+        <p>Kurven er tom</p>
+      ) : (
+        cartItems.map((item) => (
+          <CartProduct
+            key={item.id}
+            cartItem={item}
+          />
+        ))
+      )}
+    </div>
+  );
+};
+
+export default Cart;

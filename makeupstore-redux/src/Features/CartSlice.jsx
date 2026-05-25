@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { products } from "../Data.json";
 const cartSlice = createSlice({
-  name: "cartSlice",
+  name: "cart",
   initialState: {
     boughtItems: [],
-    cartItems: []
+    cartItems: [],
+    userMoney: 500,
   },
   reducers: {
   Add: (state, action) => {
@@ -21,7 +22,7 @@ const cartSlice = createSlice({
      removeProduct: (state, action) => {
       state.cart = state.cart.filter((p) => p.id !== action.payload);
     },
-    increaseQuantity: (state, action) => {
+    Increase: (state, action) => {
       const product = state.cart.find((p) => p.id === action.payload);
       if (product) {
         product.quantity += 1;
@@ -29,7 +30,7 @@ const cartSlice = createSlice({
     },
  
     // Formindsk quantity (og fjern hvis quantity bliver 0)
-    decreaseQuantity: (state, action) => {
+    Decrease: (state, action) => {
       const product = state.cart.find((p) => p.id === action.payload);
       if (product) {
         product.quantity -= 1;
@@ -40,13 +41,13 @@ const cartSlice = createSlice({
  
     // Checkout - flyt cart til boughtItems og clear cart
     checkout: (state, action) => {
-      // action.payload = totalPrice (vi skal fratrække fra userMoney i store)
+      action.payload = totalPrice - state.userMoneyoney
       state.boughtItems = [...state.cart];
       state.cart = [];
     }
   },
 });
 
-export const { Add } = cartSlice.actions;
+export const { Add, removeProduct, Increase, Decrease, checkout } = cartSlice.actions;
 
 export default cartSlice.reducer;
