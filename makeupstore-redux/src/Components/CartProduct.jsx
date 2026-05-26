@@ -5,7 +5,7 @@ import { Decrease, Increase, removeProduct } from "../Features/CartSlice";
 const CartProduct = ({ cartItem }) => {
   const dispatch = useDispatch();
 
-  return (
+  return (<div className="mt-5">
     <div className="d-flex border mb-3">
       <img src={cartItem.thumbnail} className="w-25 h-25" alt="" />
       <div className="detail ms-4">
@@ -18,6 +18,7 @@ const CartProduct = ({ cartItem }) => {
           <button className='rounded' onClick={() => dispatch(removeProduct(cartItem.id))}>Remove</button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

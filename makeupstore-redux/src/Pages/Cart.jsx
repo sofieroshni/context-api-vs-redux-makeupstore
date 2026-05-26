@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import CartProduct from "../Components/CartProduct.jsx";
 import Checkout from "./Checkout.jsx";
 import { Link } from "react-router";
-import { checkout } from "../Features/CartSlice.jsx";
+import { checkout, totalItem, totalPrice } from "../Features/CartSlice.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
 const dispatch = useDispatch();
@@ -14,11 +15,9 @@ const boughtItems = useSelector(
  (state) => state.cart.boughtItems || [] 
 );
   return (
-    <div className="container mt-5">
-        <Link to ="/checkout">    
-              <button className='btn btn-primary' onClick={() => dispatch(checkout())}>checkout</button>
-        </Link>
-
+<div className ="container mt-5 mb-5">
+  <div className="row">
+    <div className="col-8">
       {cartItems.length === 0 ? (
         <p>Kurven er tom</p>
       ) : (
@@ -30,6 +29,33 @@ const boughtItems = useSelector(
         ))
       )}
     </div>
+  </div>
+  <div className="col-4">
+    <div className="bg-secondary p-3 text-white">
+      <h5>Antal produkter i Kurv: {totalItem(cartItems)}</h5>
+      <h5>Samlet Pris; {totalPrice(cartItems)} Kr</h5>
+      <Link  className="btn btn-primary "to ="/checkout">    
+             <button  onClick={() => dispatch(checkout())} style={{border:"none", background:"none", color:"white"}}>Checkout</button>
+        </Link>
+    </div>
+  </div>
+</div> 
+    // <div className="container mt-5">
+    //     <Link to ="/checkout">    
+    //           <button className='btn btn-primary' onClick={() => dispatch(checkout())}>checkout</button>
+    //     </Link>
+
+    //   {cartItems.length === 0 ? (
+    //     <p>Kurven er tom</p>
+    //   ) : (
+    //     cartItems.map((item) => (
+    //       <CartProduct
+    //         key={item.id}
+    //         cartItem={item}
+    //       />
+    //     ))
+    //   )}
+    // </div>
   );
 };
 
