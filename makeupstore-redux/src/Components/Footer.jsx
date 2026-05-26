@@ -1,12 +1,58 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from '../App';
+const Footer = () => {
+  return (
+    <footer className="text-white">
 
- export const CartProduct = () =>{
-    return(
-        <div className='bg-primary text-white'><h1>Fopter 
-            komponent, som ska lind på Cart.jsx siden:D
-        </h1> </div>
-    )
-}
-export default CartProduct
+      <div className="d-flex justify-content-end align-items-center p-0 m-0">
+
+        <div
+          className="card text-bg-secondary mb-3 m-1 position-fixed bottom-0 end-0"
+          style={{
+            maxWidth: "18rem",
+            backgroundColor: "pink",
+            zIndex: "1000",
+            right: "0px",
+          }}
+        >
+
+          <div className="card-body">
+
+            <span className="badge bg-warning text-dark fs-6 px-3 py-2">
+              Kurv
+            </span>
+
+            <p className="small">Kurv</p>
+
+            <span className="badge bg-warning text-dark fs-6 px-3 py-2">
+              Kurvens pris
+            </span>
+
+            <p className="small">Kurvens samlet pris</p>
+
+            <span className="badge bg-success fs-6 px-3 py-2 m-0">
+              Konto
+            </span>
+
+            <p className="small">Konti</p>
+
+            <span className="bg-success fs-6 px-3 py-2 badge">
+              Købte produkter
+            </span>
+
+            <p className="small">Købte produkter</p>
+
+          </div>
+        </div>
+      </div>
+
+      <button
+        className="btn btn-dark m-2 fixed-bottom z-1000"
+        style={{ width: "100px" }}
+      >
+        SHOP
+      </button>
+
+    </footer>
+  );
+};
+
+export default Footer;

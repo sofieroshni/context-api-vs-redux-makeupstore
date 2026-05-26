@@ -17,8 +17,9 @@ const boughtItems = useSelector(
     <div className=" container mt-5 mb-5 w-75">
       {boughtItems.length === 0 ? (
         <>
-          <h1>Du har ikke købt noget endnu!</h1>
-          <Link to="/"><button className="btn btn-primary">Gå til shoppen</button></Link>
+        <div className="mt-5 container"> <h1>Du har ikke købt noget endnu!</h1>
+          <Link to="/"><button className="btn btn-primary">Gå til shoppen</button></Link></div>
+         
         </>
       ) : (
         <>
@@ -37,15 +38,12 @@ const boughtItems = useSelector(
                 </p>
                 <span className="badge text-bg-primary rounded-pill">{boughtItem.quantity}</span>
                </div>
-                
                 </li> 
                 
             )
                 )
                 }
 
-                <li className="list-group-item justify-content-between align-items-center text-bg-dark p-3">
-                </li>
             </ul>
           </div>
           {/* <ul className="list-group">
