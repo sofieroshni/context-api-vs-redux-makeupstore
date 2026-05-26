@@ -7,8 +7,10 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   // Redux version af hooks
 const cartItems = useSelector((state) => state.cart.cartItems);
+//totalItems er "kurven". 
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
   const userMoney = useSelector((state) => state.userMoney);
+  
   return (
     <header className="fixed-top">
       <div className="d-flex justify-content-between bg-secondary p-3 text-white">

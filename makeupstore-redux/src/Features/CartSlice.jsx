@@ -52,5 +52,11 @@ export const totalItem = (boughtItems) =>{
 
 export const totalPrice = (cartItems) => {
   return cartItems.reduce((total, product) => total + product.quantity * product.price, 0);
-};export const { Add, removeProduct, Increase, Decrease, checkout } = cartSlice.actions;
+};export const { Add, removeProduct, Increase, Decrease, checkout, userMoney,  } = cartSlice.actions;
 export default cartSlice.reducer;
+
+
+export const balance = (state) => {
+  return (
+    state.userMoney - totalPrice(state.boughtItems)
+  )};
