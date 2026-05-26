@@ -1,3 +1,11 @@
+import React from "react";
+import {
+  BsBagCheckFill,
+  BsCalculatorFill,
+  BsCart,
+  BsShop,
+} from "react-icons/bs";
+
 const Footer = () => {
   return (
     <footer className="text-white">
@@ -17,13 +25,13 @@ const Footer = () => {
           <div className="card-body">
 
             <span className="badge bg-warning text-dark fs-6 px-3 py-2">
-              Kurv
+              <BsCart />
             </span>
 
             <p className="small">Kurv</p>
 
             <span className="badge bg-warning text-dark fs-6 px-3 py-2">
-              Kurvens pris
+              <BsCalculatorFill />
             </span>
 
             <p className="small">Kurvens samlet pris</p>
@@ -35,7 +43,7 @@ const Footer = () => {
             <p className="small">Konti</p>
 
             <span className="bg-success fs-6 px-3 py-2 badge">
-              Købte produkter
+              <BsBagCheckFill />
             </span>
 
             <p className="small">Købte produkter</p>
@@ -48,7 +56,7 @@ const Footer = () => {
         className="btn btn-dark m-2 fixed-bottom z-1000"
         style={{ width: "100px" }}
       >
-        SHOP
+        SHOP <BsShop />
       </button>
 
     </footer>
