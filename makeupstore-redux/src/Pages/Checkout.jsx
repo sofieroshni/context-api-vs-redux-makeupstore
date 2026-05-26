@@ -39,6 +39,7 @@ const boughtItems = useSelector(
                </div>
                 
                 </li> 
+                
             )
                 )
                 }
