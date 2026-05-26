@@ -30,7 +30,7 @@ const Footer = () => {
 
     return (
 
-    <footer className="text-white">
+    <footer className="text-white" style={{backgroundColor: "#7246B5"}}>
 
       <div className="d-flex justify-content-end align-items-center p-0 m-0">
 

@@ -20,7 +20,7 @@ const dispatch = useDispatch();
     <h5 className="card-title text-dark">{product.price}</h5>
     <p className="card-text">{product.description}</p>
          <button
-            className="btn btn-primary"
+            className="btn" style={{backgroundColor:"#764ABC", color:"white"}} 
             onClick={() => dispatch(Add(product))}
           >
             Tilføj

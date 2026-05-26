@@ -15,8 +15,8 @@ const boughtItems = useSelector(
  (state) => state.cart.boughtItems || [] 
 );
   return (
-<div className ="container mt-5 mb-5">
-  <div className="row">
+<div className ="container mt-1 mb-5" >
+  <div className="row ">
     <div className="col-8">
       {cartItems.length === 0 ? (
         <p>Kurven er tom</p>
@@ -34,7 +34,7 @@ const boughtItems = useSelector(
     <div className="bg-secondary p-3 text-white">
       <h5>Antal produkter i Kurv: {totalItem(cartItems)}</h5>
       <h5>Samlet Pris; {totalPrice(cartItems)} Kr</h5>
-      <Link  className="btn btn-primary "to ="/checkout">    
+      <Link  className="btn "to ="/checkout" style={{backgroundColor:"#764ABC"}}>    
              <button  onClick={() => dispatch(checkout())} style={{border:"none", background:"none", color:"white"}}>Checkout</button>
         </Link>
     </div>

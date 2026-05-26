@@ -65,9 +65,15 @@ const boughtItems = useSelector(
 
           <h3 className="mt-4">Samlet antal: {totalItem(boughtItems)} stk</h3>
           <h3>Samlet pris: {totalPrice(boughtItems)} kr</h3>
-          <h3>Dine penge tilbage: kr</h3>
-         {userMoney - totalPrice(boughtItems)}
-          <Link to="/"><button className="btn btn-primary mt-3">Tilbage til shop</button></Link>
+{userMoney - totalPrice(boughtItems) < 0 ? (
+  <p className="bg-warning">
+    Du er i minus {userMoney - totalPrice(boughtItems)} kr
+  </p>
+) : (
+  <h3>
+    Dine penge tilbage: {userMoney - totalPrice(boughtItems)} kr
+  </h3>
+)}          <Link to="/"><button className="btn  mt-3" style={{backgroundColor:"#764ABC", color:"white"}} >Tilbage til shop</button></Link>
         </>
       )}
     </div>
