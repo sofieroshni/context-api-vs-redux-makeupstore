@@ -1,6 +1,7 @@
 import React from "react";
 import { totalItem,totalPrice, userMoney } from "../Features/CartSlice";
 import { useSelector } from "react-redux";
+import { Link } from "react-router";
 import {
   BsBagCheckFill,
   BsCalculatorFill,
@@ -46,38 +47,41 @@ const Footer = () => {
           <div className="card-body">
 
             <span className="badge bg-warning text-dark fs-6 px-3 py-2">
-              <BsCart /> 
+              <BsCart className="fs-3"/> 
+              {totalItems} Stk
             </span>
-
-            <p className="small">Kurv{totalItems}</p>
+          <p className="small">Kurv</p>
 
             <span className="badge bg-warning text-dark fs-6 px-3 py-2">
-              <BsCalculatorFill />
+              <BsCalculatorFill className="fs-3" /> {totalPrice(cartItems)} Kr
             </span>
 
-            <p className="small">Kurvens samlet pris: {totalPrice(cartItems)}</p>
+            <p className="small">Kurvens samlet pris</p>
 
-            <span className="badge bg-success fs-6 px-3 py-2 m-0">
-<BsCreditCardFill/>            </span>
+            <span className="badge bg-success fs-6 px-3 py-2 ">
+<BsCreditCardFill className="fs-3" style ={{marginRight:"8px"}}/>  
+ {userMoney - totalPrice(boughtItems)} kr
+          </span>
 
-            <p className="small">Konti: {userMoney - totalPrice(boughtItems)} Kr;</p>
+            <p className="small">Konti </p>
 
             <span className="bg-success fs-6 px-3 py-2 badge">
-              <BsBagCheckFill />
+              <BsBagCheckFill className="fs-3" style ={{marginRight:"8px"}}/>
+              {totalBoughtItems} stk
             </span>
 
-            <p className="small"> Du har købt: {totalBoughtItems}</p>
+            <p className="small"> Du har købt </p>
 
           </div>
         </div>
       </div>
 
-      <button
+      <Link  to="/"
         className="btn btn-dark m-2 fixed-bottom z-1000"
         style={{ width: "100px" }}
       >
-        SHOP <BsShop />
-      </button>
+         <BsShop className="fs-2" />
+      </Link>
 
     </footer>
   );
