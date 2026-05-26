@@ -7,6 +7,7 @@ import Cart from "./Pages/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Checkout from "./Pages/Checkout";
 
+
 function App() {
   return (
     <>
