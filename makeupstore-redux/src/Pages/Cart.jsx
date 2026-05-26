@@ -16,7 +16,7 @@ const boughtItems = useSelector(
   return (
     <div className="container mt-5">
         <Link to ="/checkout">    
-              <button className='btn btn-primary'  onClick={() => dispatch(checkout())}>checkout</button>
+              <button className='btn btn-primary' onClick={() => dispatch(checkout())}>checkout</button>
         </Link>
 
       {cartItems.length === 0 ? (
